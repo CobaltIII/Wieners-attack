@@ -33,4 +33,38 @@ def Wiener_Attack(e, N): #(public exponent, modulo) #works when assumed that pri
     
     print("Not breakable by Weiner.")
 
-Wiener_Attack(6792605526025, 9449868410449) 
+print("""
+Choose 1 for a pre-given input
+Choose 2 for your own input
+Anything else to exit
+""")
+
+n = input("Enter input: ")
+
+if n in ["1" , "2"]:
+    if n == "1":
+        print("""
+        Using pre-given Input : 
+        Public exponent = 6792605526025
+        Public mod = 9449868410449
+        """)
+        Wiener_Attack(6792605526025, 9449868410449)
+    else:
+        e = input("Enter your public exponent : ")
+        N = input("Enter your public mod : ")
+        
+        try : 
+            e = int(e)
+            N = int(N)
+            Wiener_Attack(e , N)  
+        except:
+            print("Invalid input, please try again")
+
+print("\n\n--------------A project by Dhruv Jaiswal-----------")
+#
+#
+#                            ╱|、
+#                           (˚ˎ。7  
+#                           |、˜ 〵          
+#                           じしˍ,)ノ
+#
